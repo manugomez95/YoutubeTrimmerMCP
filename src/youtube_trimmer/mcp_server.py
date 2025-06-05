@@ -28,7 +28,15 @@ logger = logging.getLogger(__name__)
 mcp = FastMCP("youtube-trimmer")
 
 # Initialize output directory at startup
-GLOBAL_OUTPUT_DIR = Path.cwd() / "output"
+# Use a user-writable directory instead of potentially read-only paths
+try:
+    # Try to use a project-specific directory
+    project_root = Path(__file__).resolve().parent.parent.parent  # Go up from src/youtube_trimmer/
+    GLOBAL_OUTPUT_DIR = project_root / "output"
+except Exception:
+    # Fallback to user's home directory
+    GLOBAL_OUTPUT_DIR = Path.home() / "youtube_trimmer_output"
+
 GLOBAL_OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 logger.info(f"Initialized output directory: {GLOBAL_OUTPUT_DIR}")
 

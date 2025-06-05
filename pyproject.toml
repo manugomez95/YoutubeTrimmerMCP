@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "youtube-trimmer-mcp"
-version = "1.0.0"
+version = "1.0.3"
 description = "Download and trim YouTube videos with MCP (Model Context Protocol) server support"
 readme = "README.md"
 requires-python = ">=3.8"

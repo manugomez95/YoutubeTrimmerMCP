@@ -1,6 +1,6 @@
 """YouTube Trimmer - Download and trim YouTube videos with MCP server support."""
 
-__version__ = "1.0.0"
+__version__ = "1.0.3"
 __author__ = "Manuel Gomez"
 __description__ = "A tool for downloading and trimming YouTube videos with MCP server support"
 

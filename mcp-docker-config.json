@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "youtube-trimmer": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--name", "youtube-trimmer-mcp-session",
+        "-v", "/Users/manuelgomez/Documents/YotubeTrimmer/output:/app/output",
+        "youtube-trimmer-mcp"
+      ],
+      "description": "YouTube Trimmer MCP Server running in Docker"
+    }
+  }
+} 

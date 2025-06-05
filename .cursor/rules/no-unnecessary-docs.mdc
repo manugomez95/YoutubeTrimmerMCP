@@ -1,0 +1,6 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+Don't create extra documentation like plan or summary mds.

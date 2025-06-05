@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  youtube-trimmer-mcp:
+    build: .
+    container_name: youtube-trimmer-mcp
+    ports:
+      - "8001:8000"  # Map to port 8001 to avoid conflicts with other services
+    volumes:
+      - ./output:/app/output  # Mount local output directory
+    stdin_open: true        # Required for MCP stdio communication
+    tty: true              # Required for MCP stdio communication
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge 
